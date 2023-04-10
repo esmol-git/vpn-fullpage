@@ -1,0 +1,136 @@
+//====================================================================================================
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 28px 0;
+    background-color: transparent;
+    z-index: 99;
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        display: block;
+        img {
+            width: 194px;
+            height: 40px;
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: rem(51);
+    }
+
+    &__callback {
+        display: flex;
+        align-items: center;
+        gap: rem(34);
+    }
+
+    &__callback-phone {
+        font-size: rem(16);
+        line-height: math.div(31, 16);
+    }
+
+    &__callback-button {
+    }
+
+    &__menu {
+    }
+}
+.menu {
+    &__icon {
+    }
+
+    &__body {
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: rem(24);
+    }
+
+    &__item {
+    }
+
+    &__link {
+        display: block;
+        position: relative;
+        font-size: rem(16);
+        line-height: math.div(31, 16);
+        overflow: hidden;
+        &::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background-color: $purpleColor;
+            left: 0;
+            bottom: 0;
+            transform: translateX(-100%);
+            transition: 0.4s ease 0s;
+        }
+        &._navigator-active::after {
+            transform: translateX(0);
+        }
+    }
+}
+//====================================================================================================
+
+//Burger
+.icon-menu {
+    display: none;
+    @media (max-width: $mobile) {
+        display: block;
+        position: relative;
+        width: rem(30);
+        height: rem(18);
+        z-index: 5;
+        @media (any-hover: none) {
+            cursor: default;
+        }
+        span,
+        &::before,
+        &::after {
+            content: "";
+            transition: all 0.3s ease 0s;
+            right: 0;
+            position: absolute;
+            width: 100%;
+            height: rem(2);
+            background-color: #000;
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        span {
+            top: calc(50% - rem(1));
+        }
+        .menu-open & {
+            span {
+                width: 0;
+            }
+            &::before,
+            &::after {
+            }
+            &::before {
+                top: calc(50% - rem(1));
+                transform: rotate(-45deg);
+            }
+            &::after {
+                bottom: calc(50% - rem(1));
+                transform: rotate(45deg);
+            }
+        }
+    }
+}

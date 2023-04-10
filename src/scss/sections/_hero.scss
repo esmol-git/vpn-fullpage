@@ -1,0 +1,133 @@
+.hero {
+    position: relative;
+    &::after,
+    &::before {
+        content: "";
+        position: absolute;
+        filter: blur(175px);
+        width: 591px;
+        height: 571px;
+        z-index: -1;
+    }
+    &::after {
+        background: #8650d9;
+        top: 0;
+        right: 0;
+    }
+    &::before {
+        background: #5d3cbf;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 370px;
+    }
+
+    z-index: 1;
+    &__inner {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.5;
+        background-image: url("../../img/backgrounds/bg-hero.svg");
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-size: 1120px;
+        z-index: -1;
+    }
+
+    &__container {
+        height: 100%;
+        background-image: url("../../img/phones.png");
+        background-repeat: no-repeat;
+        background-position: top 125px right;
+        background-size: 720px;
+        z-index: 1;
+    }
+
+    &__main {
+        padding-top: 175px;
+    }
+
+    &__main-subtitle {
+        display: inline-block;
+        font-size: rem(29);
+        line-height: math.div(32, 29);
+        letter-spacing: em(6.56);
+        text-transform: uppercase;
+        color: $purpleColor;
+        margin-bottom: rem(26);
+        span:last-child {
+            position: relative;
+            padding-left: 48px;
+            &::after {
+                content: "";
+                background-image: url("../../img/icons/star.svg");
+                background-repeat: no-repeat;
+                position: absolute;
+                left: 2px;
+                top: 50%;
+                transform: translateY(-50%) rotate(-15deg);
+                width: 22px;
+                height: 22px;
+            }
+        }
+    }
+
+    &__main-title {
+        font-weight: 800;
+        font-size: rem(110);
+        text-transform: uppercase;
+        max-width: 693px;
+        margin-bottom: rem(32);
+        span {
+            color: $purpleColor;
+        }
+    }
+
+    &__main-descr {
+        font-size: rem(20);
+        line-height: math.div(32, 20);
+        color: rgba($mainColor, 0.8);
+        max-width: rem(530);
+        margin-bottom: rem(24);
+    }
+
+    &__main-made {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 8px 8px 40px;
+        background: url("./img/flag.png"), rgba($mainColor, 0.15);
+        background-repeat: no-repeat;
+        background-position: rem(8);
+        font-size: rem(14);
+        line-height: math.div(25, 14);
+        border: rem(1.5) solid rgba($mainColor, 0.24);
+        border-radius: rem(30);
+    }
+
+    &__main-buttons {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: rem(25);
+        margin-top: 80px;
+        width: 100%;
+    }
+    &__store {
+        display: flex;
+        align-items: center;
+        gap: rem(16);
+        position: absolute;
+        right: 220px;
+        top: 20px;
+    }
+    &__bottom {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 62px;
+        width: 100%;
+        background-color: $purpleColor;
+    }
+}

@@ -1,0 +1,83 @@
+//<BUTTONS (a.btn+tab)>
+// Сниппет (HTML): btn
+
+.button {
+    display: inline-flex;
+    padding: 0px 0px;
+    border: 2px solid transparent;
+    transition: 0.3s ease 0s;
+    border-radius: 180px;
+    &--outline {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 120%;
+        padding: 29px 50px;
+        border-color: rgba(123, 97, 255, 0.5);
+        background-color: #0f1125;
+        @media (any-hover: hover) {
+            &:hover {
+                border: 2px solid #7b61ff;
+                filter: drop-shadow(0px 0px 8px #7b61ff);
+            }
+        }
+        &:focus {
+            filter: drop-shadow(0px 0px 8px #9d61ff);
+            border: 2px solid #9d61ff;
+        }
+        &-small {
+            font-size: rem(16);
+            line-height: math.div(26, 16);
+            border-color: rgba($purpleColor, 0.5);
+            color: rgba($purpleColor, 0.8);
+            padding: rem(5) rem(22.5);
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $purpleColor;
+                    border-color: $purpleColor;
+                }
+            }
+            &:focus {
+                color: $heliotropeColor;
+                border-color: $heliotropeColor;
+            }
+        }
+    }
+    &--fill {
+        position: relative;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 120%;
+        padding: 29px 50px;
+        background: radial-gradient(87.77% 87.77% at 50% 96.85%, #0070f4 0%, #8f56fb 100%);
+        border-color: rgba(123, 97, 255, 0.5);
+        overflow: hidden;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: -67px;
+            transform: translateX(-50%);
+            background: linear-gradient(360deg, rgba(255, 255, 255, 0.25) -15.71%, rgba(255, 255, 255, 0) 42.54%);
+            background-blend-mode: overlay;
+            border-radius: 100px/60px;
+            height: 117px;
+            width: 318px;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                background: radial-gradient(87.77% 87.77% at 50% 96.85%, #007ff4 0%, #b256fb 100%);
+                border: 2px solid rgba(123, 97, 255, 0.5);
+                box-shadow: 0px 4px 10px #5c23ff;
+            }
+        }
+        &:focus {
+            background: radial-gradient(87.77% 87.77% at 50% 96.85%, #0070f4 0%, #8f56fb 100%);
+            border: 2px solid rgba(123, 97, 255, 0.5);
+            box-shadow: 0px 4px 10px #5c23ff;
+        }
+    }
+
+    &._fw {
+        width: 100%;
+    }
+}
